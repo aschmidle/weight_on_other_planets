@@ -1,0 +1,49 @@
+# Inform the user about the available planets for weight calculation.
+print("I have information for the following planets:\n")
+
+# Display the list of planets with their corresponding numbers.
+print("    1. Venus    2. Mars     3. Jupiter")
+print("    4. Saturn   5. Uranus   6. Neptune\n")
+
+# Define Codey's initial weight on Earth (hardcoded value).
+weight = 185
+# Define the planet number Codey wants to go to (hardcoded value).
+# For example, 3 corresponds to Jupiter.
+planet = 3
+
+# Start of the conditional block to determine weight based on the chosen planet.
+# Each 'elif' block represents a different planet.
+if planet == 1:
+    # If the planet is Venus (1), calculate weight using its gravitational multiplier (0.91).
+    new_weight = weight * 0.91
+    # Print the calculated weight on Venus, formatted to two decimal places.
+    print(f"Your weight on Venus is {new_weight:.2f} lbs.")
+elif planet == 2:
+    # If the planet is Mars (2), calculate weight using its gravitational multiplier (0.38).
+    new_weight = weight * 0.38
+    # Print the calculated weight on Mars.
+    print(f"Your weight on Mars is {new_weight:.2f} lbs.")
+elif planet == 3:
+    # If the planet is Jupiter (3), calculate weight using its gravitational multiplier (2.34).
+    new_weight = weight * 2.34
+    # Print the calculated weight on Jupiter.
+    print(f"Your weight on Jupiter is {new_weight:.2f} lbs.")
+elif planet == 4:
+    # If the planet is Saturn (4), calculate weight using its gravitational multiplier (1.06).
+    new_weight = weight * 1.06
+    # Print the calculated weight on Saturn.
+    print(f"Your weight on Saturn is {new_weight:.2f} lbs.")
+elif planet == 5:
+    # If the planet is Uranus (5), calculate weight using its gravitational multiplier (0.92).
+    new_weight = weight * 0.92
+    # Print the calculated weight on Uranus.
+    print(f"Your weight on Uranus is {new_weight:.2f} lbs.")
+elif planet == 6:
+    # If the planet is Neptune (6), calculate weight using its gravitational multiplier (1.19).
+    new_weight = weight * 1.19
+    # Print the calculated weight on Neptune.
+    print(f"Your weight on Neptune is {new_weight:.2f} lbs.")
+else:
+    # If the entered 'planet' number does not match any of the recognized planets (1-6),
+    # print an error message indicating an invalid entry.
+    print("Enter in a valid entry.")
