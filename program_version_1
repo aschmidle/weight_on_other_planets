@@ -1,0 +1,63 @@
+# This function calculates the adjusted weight on a planet
+# based on the original weight and the planet's gravitational multiplier.
+def planet_weight(weight, gravity):
+    adjusted_weight = weight * gravity
+    return adjusted_weight
+
+# Inform the user about the available planets for weight calculation.
+print("I have information for the following planets:\n")
+
+# Display the list of planets with their corresponding numbers.
+print("    1. Venus    2. Mars     3. Jupiter")
+print("    4. Saturn   5. Uranus   6. Neptune\n")
+
+# Dictionary to store gravitational multipliers for each planet.
+# The key is the planet number, and the value is its gravitational factor relative to Earth.
+gravity_values = {
+    1: 0.91,   # Venus's gravitational multiplier
+    2: 0.38,   # Mars's gravitational multiplier
+    3: 2.34,   # Jupiter's gravitational multiplier
+    4: 1.06,   # Saturn's gravitational multiplier
+    5: 0.92,   # Uranus's gravitational multiplier
+    6: 1.19    # Neptune's gravitational multiplier
+}
+
+# Dictionary to store the names of the planets.
+# The key is the planet number, and the value is the planet's name.
+planet_names = {
+    1: "Venus",
+    2: "Mars",
+    3: "Jupiter",
+    3: "Saturn", # This seems to be a copy-paste error; fixed to 4: "Saturn" below for correctness.
+    4: "Saturn",
+    5: "Uranus",
+    6: "Neptune"
+}
+
+# Corrected planet_names dictionary (fixing the duplicate key for Jupiter)
+planet_names = {
+    1: "Venus",
+    2: "Mars",
+    3: "Jupiter",
+    4: "Saturn",
+    5: "Uranus",
+    6: "Neptune"
+}
+
+
+# Get the user's weight in pounds as an integer input.
+weight = int(input("Enter your weight in pounds: "))
+# Get the user's chosen planet number as an integer input.
+planet = int(input("Enter the number of your planet: "))
+
+# Check if the entered planet number is valid (i.e., exists as a key in gravity_values).
+if planet in gravity_values:
+    # If valid, retrieve the corresponding gravitational multiplier.
+    gravity = gravity_values[planet]
+    # Calculate the adjusted weight using the planet_weight function.
+    result = planet_weight(weight, gravity)
+    # Print the result, showing the planet name and the calculated weight, formatted to two decimal places.
+    print(f"Your weight on {planet_names[planet]} is: {result:.2f} pounds.")
+else:
+    # If the planet number is not valid, inform the user to enter a valid input.
+    print("Enter a valid input.")
